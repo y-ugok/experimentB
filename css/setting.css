@@ -1,0 +1,287 @@
+.wrapper {
+  width: 88%;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+a {
+  padding: 0; /* パディングをゼロにする */
+  margin: 0; /* マージンもゼロにする */
+  display: block;
+  /* 要素が横まで広がって縦に並ぶ */
+  text-decoration: none;
+  margin-top: 0.7rem;
+  background-color: white;
+  color: rgb(84, 84, 84);
+}
+
+.list {
+  padding: 0;
+}
+.list li {
+  list-style-type: none;
+  padding: 1em;
+  font-size: 0.95rem;
+  /* margin-top: 0.5rem; */
+  background-color: white;
+  border: 1px solid #ffefcc;
+}
+
+body {
+  margin: 0;
+  background-color: #fffbf1;
+}
+header {
+  background-color: #ffc3b7;
+  padding: 1.2em;
+}
+main {
+  width: 88%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+h1 {
+  color: #545454;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+/* == 0からやり直しダイアログ == */
+/* 背景のスタイルは ::backdrop 疑似要素で指定 */
+dialog {
+  margin: 0;
+  width: 65%;
+  padding: 0;
+  border-style: none;
+  border-radius: 1rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 中心に移動 */
+  margin: 0;
+}
+dialog > p {
+  padding: 1.3rem 1.2rem;
+  margin: 0.1rem;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* backdrop-filter: blur(2px); */
+  /* 要素の背後の領域に、ぼかしや色変化のようなグラフィック効果を適用 */
+}
+
+.button-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.button-flex button {
+  width: 50%; /* 50%に近い幅にし、間に少し余白を持たせる */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.5rem;
+}
+
+.cancel-btn {
+  background-color: #ccc; /* キャンセルボタンの背景色 */
+}
+#reset-dialog {
+  width: 285px;
+  margin: 0 auto;
+  position: absolute;
+  top: 37%;
+  border-radius: 0.55rem;
+}
+#confirm-reset {
+  /* background-color: pink; OKボタンの背景色 */
+  color: white; /* OKボタンのテキスト色 */
+  border-radius: 0 0 0.55rem 0;
+}
+#cancel-reset {
+  background-color: #f3f3f3;
+  border-radius: 0 0 0 0.55rem;
+  padding: 1rem;
+}
+
+/* テーマカラーダイアログのスタイル */
+#colorModal {
+  width: 100%;
+  /* デフォルトが inset: 0; なので top: auto; にして他のスタイルと組み合わせて任意の位置に配置 */
+  top: auto;
+
+  /* デフォルトで最大幅が設定されていて width: 100% にならないので解除 */
+  max-width: none;
+
+  /* デフォルトで fit-content になっていて中身の幅になってしまうので解除 */
+  width: auto;
+
+  /*
+   * デフォルトが auto なので visible にして box-shadow が表示されるようにする
+   * スクロールさせたい場合は子孫要素で overflow: auto などを指定する
+   */
+  overflow: visible;
+
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  height: 60vh;
+}
+/* 背景のスタイルは ::backdrop 疑似要素で指定 */
+#colorModal::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+#colorModal,
+#colorModal::backdrop {
+  transition: 0.3s cubic-bezier(0, 1, 0.68, 1);
+  /* cubic-bezier:早く始まって後でゆっくり終わる 
+  cubic-bezier(x1, y1, x2, y2)
+  x軸は時間の変化(0～1まで進む)、y軸は進行具合
+  */
+}
+
+/* ダイアログと背景に CSS トランジションを設定 */
+#colorModal,
+#colorModal::backdrop {
+  transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* (動かない例) ダイアログが非表示の時は下に移動 */
+#colorModal:not([open]) {
+  translate: 0 100%;
+  /* ダイアログが非表示のときに画面の下へ完全に移動する */
+}
+
+/* (動かない例) ダイアログが非表示の時は背景を透明にする */
+#colorModal:not([open])::backdrop {
+  opacity: 0;
+  /* ダイアログは画面の外側に移動し、見えなくなる */
+  /* 背景透過 */
+}
+
+/* ダイアログと背景に CSS トランジションを設定 */
+dialog,
+dialog::backdrop {
+  transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* ダイアログの表示前、非表示後は下に移動 */
+.show-from,
+.hide-to {
+  translate: 0 100%;
+}
+
+/* ダイアログの表示前、非表示後は背景を透明にする */
+.show-from::backdrop,
+.hide-to::backdrop {
+  opacity: 0;
+}
+/* 下から現れるダイアログ設定 */
+dialog {
+  position: fixed; /* 画面に固定 */
+  bottom: 0; /* 画面の下に表示 */
+  left: 0; /* 左端に揃える */
+  width: 100%; /* 画面幅全体に広げる */
+  padding: 0;
+  border: none;
+  border-radius: 16px 16px 0 0; /* 上部を角丸にする */
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(100%); /* 最初は画面外に隠れている */
+  transition: transform 0.3s ease-out; /* スライドインのアニメーション 開始時は速く終了に近づくにつれ緩やかに変化*/
+}
+
+dialog[open] {
+  transform: translateY(0); /* 開かれるときにスライドイン */
+}
+.flex {
+  display: flex;
+  align-items: center;
+  margin: 1em;
+  padding: 0;
+  border-style: none;
+}
+dialog {
+  padding: 0;
+  margin: 0 auto;
+}
+.wrapper > button {
+  border-radius: 0.5rem;
+  width: 4.2rem;
+  height: 2.5rem;
+  border: solid 1.3px lightgray;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.colorWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.colorWrapper > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.flex > p {
+  margin: 0;
+}
+.colorWrapper > img {
+  margin-right: 1rem;
+}
+.dialog {
+  position: relative;
+}
+.reset-dialog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+#reset-dialog > p {
+  text-align: left;
+}
+
+.selected-button {
+  background-color: black;
+  color: white;
+}
+/* デザインB（タブレット） */
+@media screen and (min-width: 600px) {
+  /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
+  .list li {
+    font-size: 0.3em;
+  }
+  #reset-dialog {
+    width: 250px;
+    height: 125px;
+  }
+  dialog > p {
+    padding: 0.8rem;
+  }
+  #cancel-reset,
+  confirm-reset {
+    padding: 0.5rem;
+  }
+  #colorModal {
+    height: 75vh;
+  }
+}
+@media screen and (min-width: 10225px) {
+}

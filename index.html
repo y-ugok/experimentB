@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>パートナーのしてほしいことリスト</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/list.css" />
+  </head>
+  <body>
+    <div class="sp-main-wrapper">
+      <header></header>
+      <main>
+        <h1>パートナーのしてほしいことリスト</h1>
+        <div id="plantContainer">
+          <img id="plantImage" src="./img/plant1.png" alt="" />
+        </div>
+        <!-- <img src="./img/flower-orange.png" alt="" /> -->
+        <ul id="list"></ul>
+
+        <!-- ダイアログ（不要だがエラー回避のため温存） -->
+        <dialog id="edit-dialog">
+          <button id="edit-close" type="button">キャンセル</button>
+          <button id="update-item-btn">更新</button>
+          <button id="del-item-btn">削除</button>
+        </dialog>
+        <!--  -->
+        <dialog id="register-dialog">
+          <button id="register-close" type="button">
+            <img src="./img/pageback.png" />
+          </button>
+          <button id="register-item-btn">完了</button>
+        </dialog>
+      </main>
+      <footer>
+        <div class="icon-wrapper">
+          <a href="index.html"><img src="./img/partner-black.png" /></a>
+          <a href="self.html"><img src="./img/you-gray.png" /></a>
+          <button id="open-disabled" disabled>
+            <img src="./img/plus.png" />
+          </button>
+          <a href="history.html"><img src="img/history-gray.png" /></a>
+          <a href="setting.html"><img src="./img/setting-gray.png" /></a>
+        </div>
+      </footer>
+    </div>
+    <!-- <script src="./js/defaultList.js"></script> -->
+    <!-- <script src="./js/firebase.js" type="module"></script> -->
+    <script src="./js/history.js"></script>
+    <script src="./js/list.js"></script>
+    <script src="./js/design.js"></script>
+  </body>
+</html>

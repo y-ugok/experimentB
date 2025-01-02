@@ -1,0 +1,243 @@
+/* ----- リスト ----- */
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  height: 4em;
+  position: relative;
+  margin-top: 0.3rem;
+  background-color: white;
+  align-items: flex-start;
+}
+
+li > button {
+  height: 100%;
+  border-style: none;
+  background-color: #ffc7be;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+.list-flex {
+  width: 100%;
+  /* background-color: #545454; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text {
+  margin-left: 2.1rem;
+  margin-top: 0.55rem;
+  width: 80%;
+  font-size: 0.85rem;
+}
+
+li span {
+  display: inline-flex;
+  align-items: flex-start; /* 文字と画像を上端で揃える */
+}
+
+li span img {
+  margin-right: 0.3rem; /* 文字と「・・・」の画像の間にスペースを作る */
+  width: 1.2rem;
+}
+
+li > button {
+  height: 100%;
+  border-style: none;
+  background-color: #ffc7be;
+  padding: 0;
+  width: 2.5rem;
+}
+
+/* 背景のスタイルは ::backdrop 疑似要素で指定 */
+#edit-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+/* ダイアログと背景に CSS トランジションを設定 */
+#edit-dialog,
+#edit-dialog::backdrop {
+  transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+/* ダイアログと背景に CSS トランジションを設定 */
+#register-dialog,
+#register-dialog::backdrop {
+  transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* 新規追加と編集ダイアログを開く時 */
+#register-dialog,
+#edit-dialog {
+  /* デフォルトが inset: 0; なので top: auto; にして下側に配置する */
+  top: auto;
+
+  /* デフォルトで最大幅が設定されていて width: 100% にならないので解除 */
+  max-width: none;
+
+  /* デフォルトで fit-content になっていて中身の幅になってしまうので解除 */
+  width: auto;
+  /*
+     * デフォルトが auto なので visible にして box-shadow が表示されるようにする
+     * スクロールさせたい場合は子孫要素で overflow: auto などを指定する
+     */
+  overflow: visible;
+  padding: 0.2rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+}
+#register-dialog {
+  height: 40vh;
+}
+#edit-dialog {
+  height: 70vh;
+}
+/* 背景のスタイルは ::backdrop 疑似要素で指定 */
+#register-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+/* ダイアログの表示前、非表示後は下に移動 */
+.show-from,
+.hide-to {
+  translate: 0 100%;
+}
+
+/* ダイアログの表示前、非表示後は背景を透明にする */
+.show-from::backdrop,
+.hide-to::backdrop {
+  opacity: 0;
+}
+
+/* .edit-delete-containerが<li>の上に重なるように配置 */
+.edit-delete-container {
+  position: absolute; /* 親要素に相対的に位置を設定 */
+  top: -2.5rem; /* liの上に表示 */
+  right: 2rem; /* liの右端に配置 */
+  display: flex;
+  flex-direction: column; /* ボタンを縦に並べる */
+  z-index: 10; /* リストの他の部分の上に表示 */
+}
+
+edit-delete-container > button {
+  background-color: #ffffff;
+}
+.edit-btn {
+  width: 6rem;
+  border-bottom: solid 0.4px #e0e0e0;
+  border-radius: 0.3rem 0.3rem 0 0;
+  background-color: white;
+  border: solid 1px rgba(243, 243, 243, 1);
+  font-size: 0.7rem;
+}
+.delete-btn {
+  border-radius: 0 0 0.3rem 0.3rem;
+  background-color: white;
+  border: solid 1px rgba(243, 243, 243, 1);
+  font-size: 0.7rem;
+}
+
+.rectangle {
+  width: 2.2rem;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  background-color: #ffc7be;
+  border-radius: 0 50% 50% 0;
+  height: 100%;
+  position: relative;
+}
+
+.rectangle > img {
+  width: 1.8rem;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 中心に移動 */
+}
+/* actionアイコンのスタイル */
+
+img[src="./img/action.png"],
+img[src="./img/shopping.png"] {
+  width: 1.4rem;
+}
+.wrapper {
+  width: 0.5rem;
+  height: 100%;
+  background-color: #ffc7be;
+  margin: 0;
+}
+.half-circle {
+  width: 2rem; /* 半円の幅 */
+  height: 1.5rem; /* 半円の高さ */
+  background-color: #ffc7be; /* 半円の色 */
+  border-radius: 1.5rem 1.5rem 0 0; /* 上半分だけ丸く */
+  position: absolute; /* li内での位置 */
+  top: 0; /* 上部に配置 */
+  left: 0; /* 左に配置 */
+}
+#close > img {
+  width: 2rem;
+}
+
+@media screen and (min-width: 520px) {
+  /* PC用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  li {
+    margin-top: 0.2rem;
+    height: 2.2em;
+  }
+
+  .complete-btn > img,
+  li.action img:first-child,
+  li.shopping img:first-child,
+  .rectangle > img {
+    width: 0.9rem;
+  }
+  .text {
+    font-size: 0.88rem;
+  }
+  .rectangle {
+    width: 1.3rem;
+  }
+  li > button {
+    width: 1.5rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  /* PC用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  li {
+    margin-bottom: 0.2rem;
+    height: 2.1em;
+  }
+  .text {
+    margin-left: 1.1rem;
+    margin-top: 0.5rem;
+    font-size: 0.45rem;
+  }
+  li span img {
+    width: 0.8rem;
+  }
+  #register-dialog,
+  #edit-dialog {
+    width: 250px;
+  }
+}

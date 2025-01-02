@@ -1,0 +1,397 @@
+body {
+  margin: 0;
+  background-color: #fffbf1;
+  text-size-adjust: none;
+}
+
+header {
+  background-color: #ffc3b7;
+  padding: 0.75rem;
+}
+main {
+  width: 88%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.wrapper > #list {
+  height: 80vh;
+  overflow-y: scroll;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 80%; /* アイコンの表示範囲を80%に */
+}
+button {
+  text-align: center;
+  border-style: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+.header-wrapper > p {
+  margin: 0 auto;
+  font-size: 1rem;
+}
+button > img {
+  width: 1.5rem;
+}
+#register-dialog {
+  width: 100%;
+}
+footer {
+  display: flex; /* 横並びにする */
+  justify-content: space-around; /* 均等に間隔を空ける */
+  align-items: center; /* 高さを中央揃えにする */
+  background-color: #ffffff; /* フッターの背景色 */
+  border: solid 0.1px rgb(234, 234, 234);
+  padding: 0.57rem 0; /* 上下にパディングを追加 */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 75%; /* アイコンの表示範囲を80%に */
+}
+/* aタグのflexと中央揃えを指定 */
+.icon-wrapper a {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* これで縦方向に中央揃え */
+  margin: 0;
+}
+.icon-wrapper a img {
+  width: 2rem;
+}
+h1 {
+  color: #545454;
+  font-size: 1rem;
+  margin: 0.8rem 0;
+}
+
+#open,
+#open-disabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  background-color: #efefef;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 1px #dbdbdb;
+}
+
+/* ダイアログのスタイル */
+dialog {
+  /* デフォルトが inset: 0; なので top: auto; にして下側に配置する */
+  top: auto;
+
+  /* デフォルトで最大幅が設定されていて width: 100% にならないので解除 */
+  max-width: none;
+
+  /* デフォルトで fit-content になっていて中身の幅になってしまうので解除 */
+  width: auto;
+
+  /*
+   * デフォルトが auto なので visible にして box-shadow が表示されるようにする
+   * スクロールさせたい場合は子孫要素で overflow: auto などを指定する
+   */
+  overflow: visible;
+  /* 要素のボックスがはみ出た場合をどう扱うかを指定 */
+  background-color: #fff;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  box-sizing: border-box;
+  /*border-boxを要素に指定すると、paddingとborderは要素のwidthとheightに含まれる*/
+  padding: 0;
+}
+
+/* 背景のスタイルは ::backdrop 疑似要素で指定 */
+/* dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* backdrop-filter: blur(2px); */
+/* 要素の背後の領域に、ぼかしや色変化のようなグラフィック効果を適用 */
+/* }  */
+dialog > p {
+  text-align: center;
+  margin-bottom: 0;
+}
+#reset-dialog {
+  text-align: left;
+}
+/* ダイアログの表示前、非表示後は下に移動 */
+.show-from,
+.hide-to {
+  translate: 0 100%;
+}
+
+.center,
+dialog > p {
+  font-size: 0.65rem;
+  text-align: center;
+}
+#update-item-btn,
+#register-item-btn {
+  background-color: #ffadbe;
+  border-radius: 0.3rem;
+  color: white;
+  border: none;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.center {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.dialog-content {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 60vh;
+}
+#icon-type,
+#new-icon-type,
+#priority-select,
+#new-priority-select {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 0.1rem;
+  background-color: #f8f8f8;
+  border-radius: 0.1rem;
+  padding-left: 0.2rem;
+  height: 1.8rem;
+  font-size: 1rem;
+}
+
+#item-content,
+#new-item-content {
+  height: 2rem;
+  width: 99%;
+  margin-bottom: 0.2rem;
+  border-radius: 0.1rem;
+  border: 0.1px solid #d9d9d9;
+  font-size: 1rem;
+}
+#item-content,
+#icon-type {
+  font-size: 1rem;
+}
+
+.flex {
+  padding-bottom: 0.5rem;
+  border-bottom: solid 1px #f2f2f2;
+}
+#close {
+  /* 背景色を無色に */
+  background: transparent;
+  /* 枠線を消す */
+  border: none;
+  /* クリックした際に枠線をnone消す */
+  outline: none;
+  font-size: 0.8rem;
+  padding: 0;
+}
+label {
+  font-size: 0.8rem;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 1.3rem 0.75rem;
+}
+
+#del-item-btn {
+  background: transparent;
+  color: rgb(255, 195, 183);
+  font-size: 0.55rem;
+}
+
+/* パートナー側の植物成長 */
+#plantContainer {
+  text-align: center;
+}
+#plantContainer > img {
+  width: 30%;
+}
+#new-item-content + .button-flex {
+  width: 100%;
+}
+#reset-dialog > p {
+  font-size: 0.95rem;
+}
+#colorClose > button {
+  font-size: 2rem;
+}
+.button-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#cancel-reset,
+#confirm-reset {
+  font-size: 0.95rem;
+}
+.colorWrapper > p {
+  font-size: 1.2rem;
+}
+#del-item-btn {
+  font-size: 0.9rem;
+}
+.sp-main-wrapper {
+  background-color: #fffbf1;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+footer {
+  position: initial;
+  position: absolute;
+  width: 99.5%;
+  height: 1em;
+  position: fixed;
+  padding: 1.1rem 0;
+}
+h1 {
+  font-size: 1rem;
+}
+.icon-wrapper a > img {
+  width: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .wrapper > #list {
+    height: 57vh;
+    overflow-y: scroll;
+    font-size: 0.5rem;
+    /* font-size: 0.5rem; */
+    /* padding: 0 1.5rem; */
+  }
+  #cancel-reset,
+  #confirm-reset {
+    font-size: 0.55rem;
+  }
+  #plantContainer > img {
+    width: 80px;
+  }
+  .header-wrapper > p {
+    font-size: 0.6rem;
+  }
+  .header-wrapper {
+    margin: 0.5rem 0.5rem 0.1rem;
+  }
+  button > img {
+    width: 1rem;
+  }
+  label,
+  #icon-type,
+  #item-content,
+  #new-priority-select,
+  #priority-select {
+    font-size: 0.55rem;
+  }
+  #icon-type,
+  #new-priority-select,
+  #priority-select {
+    height: 1.2rem;
+  }
+  #item-content {
+    height: 2rem;
+  }
+  #update-item-btn {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.55rem;
+  }
+  #del-item-btn {
+    font-size: 0.5rem;
+  }
+  .colorWrapper > p,
+  .wrapper > button {
+    font-size: 0.55rem;
+  }
+  .wrapper > button {
+    width: 2.8rem;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.47rem;
+  }
+  dialog > p {
+    padding: 0.6rem;
+  }
+  .beige {
+    margin-top: 0.4rem;
+  }
+  #new-icon-type {
+    height: 1.2rem;
+  }
+  #new-item-content,
+  #new-icon-type {
+    font-size: 0.55rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* PC用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  body {
+    height: 100vh;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    align-items: center;
+  }
+  .sp-main-wrapper {
+    background-color: #fffbf1;
+    width: 250px;
+    height: 505px;
+    margin: 0 auto;
+    position: relative;
+  }
+  h1 {
+    font-size: 0.6rem;
+  }
+  main {
+    width: 88%;
+    margin: 0 auto;
+  }
+  footer {
+    position: initial;
+    position: absolute;
+    width: 99.5%;
+    padding: 0.5rem 0;
+  }
+  .icon-wrapper a > img {
+    width: 1.3rem;
+  }
+  /* button > img {
+    width: 0.7rem;
+  } */
+  #plantContainer > img {
+    width: 30%;
+  }
+  #open,
+  #open-disabled {
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.35rem;
+  }
+  #register-item-btn {
+    font-size: 0.5rem;
+  }
+  #reset-dialog {
+    width: 165px;
+    height: 90px;
+  }
+  #reset-dialog > p {
+    font-size: 0.55rem;
+  }
+}

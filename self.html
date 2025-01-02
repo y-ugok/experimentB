@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0"
+    />
+    <title>私のしてほしいことリスト</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/list.css" />
+  </head>
+  <body>
+    <div class="sp-main-wrapper">
+      <header></header>
+      <main>
+        <h1>私のしてほしいことリスト</h1>
+        <ul id="list"></ul>
+        <!-- 編集ダイアログ -->
+        <dialog id="edit-dialog">
+          <div class="inner">
+            <div class="header-wrapper">
+              <button id="edit-close" type="button">
+                <img src="./img/pageback.png" />
+              </button>
+              <p id="text">私のしてほしいことリストの編集</p>
+            </div>
+            <div class="dialog-content">
+              <label for="icon-type">アイコンの種類</label><br />
+              <select id="icon-type">
+                <option value="cook">料理</option>
+                <option value="cleaning">掃除</option>
+                <option value="communication">会話</option>
+                <option value="action">行動</option>
+                <option value="shopping">買い物</option>
+                <option value="education">教育</option>
+                <option value="other">その他</option></select
+              ><br />
+              <!-- <label for="new-priority-select">優先度の変更</label>
+              <select id="new-priority-select">
+                <option value="high">高</option>
+                <option value="middle">中</option>
+                <option value="low">低</option>
+              </select> -->
+              <label for="item-content">リストアイテム内容</label><br />
+              <textarea id="item-content"></textarea>
+              <div class="button-flex">
+                <button id="update-item-btn">更新</button>
+                <button id="del-item-btn">削除</button>
+              </div>
+            </div>
+          </div>
+        </dialog>
+
+        <!-- 新規追加ダイアログ -->
+        <dialog id="register-dialog">
+          <div class="header-wrapper">
+            <button id="register-close" type="button">
+              <img src="./img/pageback.png" />
+            </button>
+            <p id="text">私のしてほしいことリストの追加</p>
+          </div>
+          <div class="dialog-content">
+            <label for="icon-type">アイコンの種類</label><br />
+            <select id="new-icon-type">
+              <option value="cook">料理</option>
+              <option value="cleaning">掃除</option>
+              <option value="communication">会話</option>
+              <option value="action">行動</option>
+              <option value="shopping">買い物</option>
+              <option value="education">教育</option>
+              <option value="other">その他</option>
+            </select>
+            <br />
+            <!-- <label for="priority-select">優先度</label>
+            <select id="priority-select">
+              <option value="high">高</option>
+              <option value="middle">中</option>
+              <option value="low">低</option>
+            </select> -->
+            <label for="new-item-content">リストアイテム内容</label><br />
+            <textarea id="new-item-content"></textarea>
+            <div class="button-flex">
+              <button id="register-item-btn">新規追加</button>
+            </div>
+          </div>
+        </dialog>
+      </main>
+      <footer>
+        <div class="icon-wrapper">
+          <a href="index.html"><img src="./img/partner-gray.png" /></a>
+          <a href="self.html"><img src="./img/you-black.png" /></a>
+          <button id="open"><img src="./img/plus.png" /></button>
+          <a href="history.html"><img src="img/history-gray.png" /></a>
+          <a href="setting.html"><img src="./img/setting-gray.png" /></a>
+        </div>
+      </footer>
+    </div>
+    <!-- <script src="./js/defaultList.js"></script> -->
+    <script src="./js/history.js"></script>
+    <script src="./js/list.js"></script>
+    <script src="./js/design.js"></script>
+  </body>
+</html>

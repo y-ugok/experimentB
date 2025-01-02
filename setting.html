@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>設定</title>
+    <link rel="stylesheet" href="./css/setting.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+      <div class="sp-main-wrapper">
+        <header></header>
+        <main>
+          <h1>設定</h1>
+          <ul class="list">
+            <!-- <a href="#">
+            <li>変化する物の変更
+            </li>
+            </a> -->
+            <!-- <a href="#" id="reset-btn">
+            <li>
+              データの初期化
+            </li>
+            </a> -->
+              <!-- 初期化確認ダイアログ -->
+            <div class="dialog">
+              <dialog id="reset-dialog">
+                <p>追加したリスト等、全てのデータを削除し初期化します。本当に続けますか？</p>
+                <div class="button-flex">
+                  <button id="cancel-reset">キャンセル</button>
+                  <button id="confirm-reset">OK</button>
+                </div>
+              </dialog>
+            </div>
+
+            <a href="#" id="colorButton">
+            <li>
+              テーマカラーの変更
+            </li>
+            </a>
+            <dialog id="colorModal">
+              <!-- inner を増やして見た目のスタイルをすべてこれに設定 -->
+              <div class="inner">
+                <div class="header-wrapper">
+                  <button id="colorClose" type="button"><img src="./img/pageback.png"></button>
+                  <p>テーマカラーの変更</p>
+                </div>
+                <div class="beige">
+                  <div class="wrapper">
+                    <div class="colorWrapper">
+                      <img src="./img/red.png">
+                      <p>赤</p>
+                    </div>
+                    <button id="red" class="selected-button">適用中</button>
+                  </div>
+                </div>
+
+                <div class="beige">
+                  <div class="wrapper">
+                    <div class="colorWrapper">
+                      <img src="./img/yellow.png">
+                      <p>黄</p>
+                    </div>
+                    <button id="yellow">適用</button>
+                  </div>
+                </div>
+
+                <div class="beige">
+                  <div class="wrapper">
+                    <div class="colorWrapper">
+                      <img src="./img/green.png">
+                      <p>緑</p>
+                    </div>
+                    <button id="green">適用</button>
+                  </div>
+                </div>
+
+                <div class="beige">
+                  <div class="wrapper">
+                    <div class="colorWrapper">
+                      <img src="./img/blue.png">
+                      <p>青紫</p>
+                    </div>
+                    <button id="blue">適用</button>
+                  </div>
+                </div>
+              </div>
+            </dialog>
+        </main>
+        <footer>
+          <div class="icon-wrapper">
+            <a href="index.html"><img src="./img/partner-gray.png" /></a>
+            <a href="self.html"><img src="./img/you-gray.png" /></a>
+            <button id="open-disabled"><img src="./img/plus.png" /></button>
+            <a href="history.html"><img src="img/history-gray.png" /></a>
+            <a href="setting.html"><img src="./img/setting-black.png" /></a>
+          </div>
+        </footer>
+      </div>
+    <!-- <script src="./js/defaultList.js"></script> -->
+    <script src="./js/setting.js"></script>
+    <script src="./js/design.js"></script>
+  </body>
+</html>
