@@ -330,12 +330,24 @@ function updateSessionStorageItem(oldText, newItem) {
     if (item.text === oldText) {
       // 履歴を更新（in history.js）
       updateHistory(oldText, newItem.text);
+
+      // Firestoreに保存
+      saveToFirestore(listKey, newItem);
+
       return newItem; // アイテムを新しい内容で更新
     }
     return item;
   });
 
   sessionStorage.setItem(listKey, JSON.stringify(storedItems));
+}
+
+// Firestoreにデータを保存する関数
+function saveToFirestore(listKey, item) {
+  import("./firebase.js").then((module) => {
+    const db = new module.Firebase();
+    db.addData(listKey, item);
+  });
 }
 
 window.onload = () => {
