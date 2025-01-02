@@ -9,9 +9,9 @@ const resetButton = document.getElementById('reset-btn');
 const cancelResetButton = document.getElementById('cancel-reset');
 const confirmResetButton = document.getElementById('confirm-reset');
 
-resetButton.addEventListener('click', () => {
-  resetDialog.showModal();
-});
+// resetButton.addEventListener('click', () => {
+//   resetDialog.showModal();
+// });
 
 cancelResetButton.addEventListener('click', () => {
   resetDialog.close();
